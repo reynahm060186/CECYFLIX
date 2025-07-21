@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import peliculas from './data/peliculas.json';
 
-const API_URL = "https://recomendaciones-backend.onrender.com";
+const API_URL = "https://recomendaciones-backend-0cuc.onrender.com/api/peliculas";
 
 function App() {
   const [input, setInput] = useState('');
@@ -41,7 +41,7 @@ function App() {
     setPeliculasFiltradas([]);
 
     try {
-      const response = await fetch(`${API_URL}/api/recomendaciones`, {
+      const response = await fetch(`https://recomendaciones-backend-0cuc.onrender.com/api/recomendaciones`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
